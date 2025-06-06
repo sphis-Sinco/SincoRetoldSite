@@ -11,5 +11,48 @@
                 <h1>Timeline (2024 - 2028)</h1>
                 <p>The comic timeline summarized here</p>
         </header>
+
+        <main>
+                <section id="year-list" class="year-grid">
+                </section>
+        </main>
+
+        <script>
+                var entries = [
+                        {
+                        date: "September 2024",
+                        entries: [
+                                "Sinco accidentally creates a gigantic explosion",
+                                "Sinco and TJ meet"
+                        ]
+                        }
+                ];
+
+                var list = document.getElementById("year-list");
+
+                for (let dateEntry of entries) {
+                        var dateString = dateEntry.date;
+                        var eventEntries = dateEntry.entries;
+
+                        var card = document.createElement('li');
+                        card.className = "year-card";
+
+                        var date = document.createElement('h4');
+                        date.innerHTML = dateString;
+                        card.appendChild(date);
+
+                        var entryList = document.createElement('ul');
+
+                        for (let entry of eventEntries) {
+                                var listItem = document.createElement('li');
+                                listItem.textContent = entry;
+                                entryList.appendChild(listItem);
+                        }
+
+                        card.appendChild(entryList);
+                        list.appendChild(card);
+                }
+        </script>
+
 </body>
 </html>
